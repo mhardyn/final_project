@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="max-w-lg mx-auto mt-10 p-8 bg-white rounded-lg shadow-lg">
+  <h2 class="text-3xl font-semibold mb-6 text-center text-gray-800">Edit employee details</h2>
+
+  <form method="post" class="space-y-6">
+    {% csrf_token %}
+    {% if error %}
+      <div class="bg-red-100 text-red-700 px-4 py-2 rounded mb-4">{{ error }}</div>
+    {% endif %}
+
+    <div>
+      <label for="name" class="block mb-1 font-medium text-gray-700">Name</label>
+      <input id="name" name="name" type="text" required
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.name }}">
+    </div>
+
+    <div>
+      <label for="surname" class="block mb-1 font-medium text-gray-700">Surname</label>
+      <input id="surname" name="surname" type="text" required
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.surname }}">
+    </div>
+
+    <div>
+      <label for="pesel" class="block mb-1 font-medium text-gray-700">PESEL</label>
+      <input id="pesel" name="pesel" type="text" required maxlength="11" minlength="11"
+        class="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100 cursor-not-allowed" readonly
+        value="{{ employee.pesel }}">
+    </div>
+
+    <div>
+      <label for="residential_address" class="block mb-1 font-medium text-gray-700">Residential address</label>
+      <input id="residential_address" name="residential_address" type="text"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.residential_address }}">
+    </div>
+
+    <div>
+      <label for="date_of_employment" class="block mb-1 font-medium text-gray-700">Date of employment</label>
+      <input id="date_of_employment" name="date_of_employment" type="date" required
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.date_of_employment|date:'Y-m-d' }}">
+    </div>
+
+    <div>
+      <label for="salary" class="block mb-1 font-medium text-gray-700">Salary (PLN)</label>
+      <input id="salary" name="salary" type="number" step="0.01" required min="0"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.salary }}">
+    </div>
+
+    <div>
+      <label for="phone_number" class="block mb-1 font-medium text-gray-700">Phone number</label>
+      <input id="phone_number" name="phone_number" type="text"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.phone_number }}">
+    </div>
+
+    <div>
+      <label for="email" class="block mb-1 font-medium text-gray-700">Email</label>
+      <input id="email" name="email" type="email"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        value="{{ employee.email }}">
+    </div>
+
+    <button type="submit" class="w-full btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
+      Save changes
+    </button>
+  
+  
+  </form>
+
+    <form method="post" action="{% url 'delete_employee_url' pesel=employee.pesel %}" onsubmit="return confirm('Czy na pewno chcesz usunąć tego pracownika?');" class="mt-6">
+    {% csrf_token %}
+    <button type="submit" class="w-full btn bg-red-500 hover:bg-red-700 text-white">
+    Delete employee
+    </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+name,surname,pesel,residential_address,date_of_employment,salary,phone_number,email
+Anna,Kowalska,90010112345,"ul. Grodzka 12, 31-044 Kraków",2025-07-15,6100.00,601 234 567,anna.kowalska@example.com
+Jan,Nowak,85032254321,"ul. Długa 7/3, 31-147 Kraków",2023-01-01,7200.00,602 345 678,jan.nowak@example.com
+Karolina,Wiśniewska,92061498765,"ul. Karmelicka 25, 31-131 Kraków",2022-03-24,5800.00,603 456 789,karolina.wisniewska@example.com
+Tomasz,Zieliński,78123033456,"ul. Starowiślna 44/6, 31-038 Kraków",2024-04-01,8300.00,604 567 890,tomasz.zielinski@example.com
+Marek,Wójcik,95080522331,"ul. Czarnowiejska 8/2, 30-054 Kraków",2020-05-15,6000.00,605 678 901,marek.wojcik@example.com
+Magdalena,Nowicka,87071412378,"ul. Dietla 56, 31-039 Kraków",2020-05-01,6700.00,606 789 012,magdalena.nowicka@example.com
+Paweł,Lewandowski,91090333211,"ul. Kalwaryjska 15/1, 30-504 Kraków",2019-06-15,6200.00,607 890 123,pawel.lewandowski@example.com
+Joanna,Dąbrowska,89010677890,"ul. Lubicz 10, 31-504 Kraków",2022-07-01,6400.00,608 901 234,joanna.dabrowska@example.com
+Piotr,Kaczmarek,80081245678,"ul. Lea 20/4, 30-052 Kraków",2023-09-01,7500.00,609 012 345,piotr.kaczmarek@example.com
+Aleksandra,Mazur,93032712345,"ul. Świętego Tomasza 9, 31-014 Kraków",2025-03-01,5900.00,510 123 456,aleksandra.mazur@example.com
+Michał,Krawczyk,86010133456,"ul. Krowoderska 30, 31-141 Kraków",2020-05-05,7100.00,511 234 567,michal.krawczyk@example.com
+Natalia,Piotrowska,94041066789,"ul. Sienkiewicza 14/2, 31-026 Kraków",2023-04-06,6800.00,512 345 678,natalia.piotrowska@example.com
+Artur,Grabowski,82020599888,"ul. Rakowicka 1, 31-511 Kraków",2020-04-01,7700.00,513 456 789,artur.grabowski@example.com
+Katarzyna,Król,91071522456,"ul. Wrocławska 18/7, 30-006 Kraków",2022-05-07,6900.00,514 567 890,katarzyna.krol@example.com
+Andrzej,Wieczorek,89042211001,"ul. Prądnicka 22, 30-002 Kraków",2023-04-06,6300.00,515 678 901,andrzej.wieczorek@example.com
+Agnieszka,Jankowska,92091965432,"ul. Grzegórzecka 33/5, 31-532 Kraków",2022-12-01,6100.00,516 789 012,agnieszka.jankowska@example.com
+Rafał,Baran,80010422345,"ul. Zakopiańska 70, 30-418 Kraków",2024-01-01,8200.00,517 890 123,rafal.baran@example.com
+Monika,Malinowska,95031188900,"ul. Mogilska 31/2, 31-545 Kraków",2019-06-01,6000.00,518 901 234,monika.malinowska@example.com
+Łukasz,Olszewski,83092855443,"ul. Pilotów 21, 31-462 Kraków",2022-05-01,7400.00,519 012 345,lukasz.olszewski@example.com
+Beata,Sawicka,90061866778,"ul. Wielicka 50/3, 30-552 Kraków",2023-04-06,6600.00,530 123 456,beata.sawicka@example.com
+Jan,Krawczyk,95033342422,"al. Kijowska 14, 30-079 Kraków",2025-07-22,6000.00,555202392,jan.krawczyk@test.pl
+Anna,Kocmyrzowska,87293939343,"al. Kijowska 15, 30-079 Kraków",2025-07-08,5500.00,887223766,anna.kocmyrzowska@test.pl

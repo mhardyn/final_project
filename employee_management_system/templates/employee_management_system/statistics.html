@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+  <div class="max-w-6xl w-full">
+    <h2 class="text-4xl font-extrabold mb-10 text-center text-gray-800">
+      <b>Employee Statistics</b>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Number of Employees</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ employee_count }}</p>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Total Monthly Salary</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ total_salary }} PLN</p>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Minimum Salary</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ min_salary }} PLN</p>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Maximum Salary</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ max_salary }} PLN</p>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Average Salary</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ average_salary }} PLN</p>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition flex flex-col items-center justify-center text-center">
+        <p class="text-sm text-gray-500 uppercase mb-2">Average Employee Age</p>
+        <p class="text-2xl font-semibold text-gray-800">{{ average_age }} years</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+

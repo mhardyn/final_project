@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <div class="max-w-md mx-auto mt-10">
+
+    <form method="post" class="card bg-base-100 shadow-md p-6 space-y-4">
+      {% csrf_token %}
+      <label for="pesel" class="block font-medium">Enter PESEL:</label>
+      <input type="text" name="pesel" id="pesel" class="input input-bordered bg-gray-100 w-full border-gray-400" required>
+
+      <div class="flex gap-2">
+        <button type="submit" class="btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
+        Search
+        </button>
+        <button type="button"
+          onclick="window.location.href='{% url 'employee_search_url' %}'"
+          class="btn bg-gray-300 hover:bg-gray-400 text-gray-800">
+        Clear
+        </button>
+</div>
+
+
+    </form>
+
+    {% if error %}
+      <p class="text-red-500 mt-4">{{ error }}</p>
+    {% endif %}
+
+    {% if employee %}
+      <div class="card card-bordered bg-base-100 shadow-md mt-6 p-6">
+        <h2 class="text-xl font-bold mb-4">Employee details</h2>
+        <p><strong>Name:</strong> {{ employee.name }}</p>
+        <p><strong>Surname:</strong> {{ employee.surname }}</p>
+        <p><strong>PESEL:</strong> {{ employee.pesel }}</p>
+        <p><strong>Residential address:</strong> {{ employee.residential_address }}</p>
+        <p><strong>Date of employment:</strong> {{ employee.date_of_employment|date:"Y-m-d" }}</p>
+        <p><strong>Salary:</strong> {{ employee.salary }}</p>
+        <p><strong>Phone number:</strong> {{ employee.phone_number }}</p>
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+
+        {% if employee.pesel %}
+          <a href="{% url 'employee_edit_url' pesel=employee.pesel %}" class="btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
+            Edit data
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+{% endblock %}
+
+

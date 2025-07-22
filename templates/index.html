@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block page_title %}Employees{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'dist/styles.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+<div class="navbar shadow-sm bg-gray-200 relative">
+    
+  <div class="flex-1 pl-4">
+    <a href="{% url 'employee_search_url' %}" class="btn btn-ghost text-xl">Search</a>
+  </div>
+    
+  <div class="absolute left-1/2 transform -translate-x-1/2">
+    <p class="italic text-lg text-blue-900 font-medium tracking-wide whitespace-nowrap">
+      Employee Management System
+    </p>
+  </div>
+    
+  <div class="flex-none pr-4">
+    <button class="btn btn-square btn-ghost" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           class="inline-block h-5 w-5 stroke-current">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div id="menu" class="hidden flex flex-col items-start bg-gray-100 p-4">
+  <a href="{% url 'all_employees_url' %}" class="btn btn-ghost text-left text-blue-900">Employees</a>
+  <a href="{% url 'statistics_url' %}" class="btn btn-ghost text-left text-blue-900">Statistics</a>
+  <a href="{% url 'employee_management_system:holidays_view_url' %}" class="btn btn-ghost text-left text-blue-900">Holidays</a>
+</div>
+
+<div class="mx-auto max-w-[1200px] px-2 my-12">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

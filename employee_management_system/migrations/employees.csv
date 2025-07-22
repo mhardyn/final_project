@@ -1,0 +1,22 @@
+id;name;surname;pesel;residential_address;date_of_employment;salary;phone_number;email
+1;Anna;Kowalska;90010112345;ul. Grodzka 12, 31-044 Kraków;2025-07-15;6100.0;601 234 567;anna.kowalska@example.com
+2;Jan;Nowak;85032254321;ul. Długa 7/3, 31-147 Kraków;01/01/2023;7200;602 345 678;jan.nowak@example.com
+3;Karolina;Wiśniewska;92061498765;ul. Karmelicka 25, 31-131 Kraków;24/03/2022;5800;603 456 789;karolina.wisniewska@example.com
+4;Tomasz;Zieliński;78123033456;ul. Starowiślna 44/6, 31-038 Kraków;01/04/2024;8300;604 567 890;tomasz.zielinski@example.com
+5;Marek;Wójcik;95080522331;ul. Czarnowiejska 8/2, 30-054 Kraków;15/05/2020;6000;605 678 901;marek.wojcik@example.com
+6;Magdalena;Nowicka;87071412378;ul. Dietla 56, 31-039 Kraków;01/05/2020;6700;606 789 012;magdalena.nowicka@example.com
+7;Paweł;Lewandowski;91090333211;ul. Kalwaryjska 15/1, 30-504 Kraków;15/06/2019;6200;607 890 123;pawel.lewandowski@example.com
+8;Joanna;Dąbrowska;89010677890;ul. Lubicz 10, 31-504 Kraków;01/07/2022;6400;608 901 234;joanna.dabrowska@example.com
+9;Piotr;Kaczmarek;80081245678;ul. Lea 20/4, 30-052 Kraków;01/09/2023;7500;609 012 345;piotr.kaczmarek@example.com
+10;Aleksandra;Mazur;93032712345;ul. Świętego Tomasza 9, 31-014 Kraków;01/03/2025;5900;510 123 456;aleksandra.mazur@example.com
+11;Michał;Krawczyk;86010133456;ul. Krowoderska 30, 31-141 Kraków;05/05/2020;7100;511 234 567;michal.krawczyk@example.com
+12;Natalia;Piotrowska;94041066789;ul. Sienkiewicza 14/2, 31-026 Kraków;06/04/2023;6800;512 345 678;natalia.piotrowska@example.com
+13;Artur;Grabowski;82020599888;ul. Rakowicka 1, 31-511 Kraków;01/04/2020;7700;513 456 789;artur.grabowski@example.com
+14;Katarzyna;Król;91071522456;ul. Wrocławska 18/7, 30-006 Kraków;07/05/2022;6900;514 567 890;katarzyna.krol@example.com
+15;Andrzej;Wieczorek;89042211001;ul. Prądnicka 22, 30-002 Kraków;06/04/2023;6300;515 678 901;andrzej.wieczorek@example.com
+16;Agnieszka;Jankowska;92091965432;ul. Grzegórzecka 33/5, 31-532 Kraków;01/12/2022;6100;516 789 012;agnieszka.jankowska@example.com
+17;Rafał;Baran;80010422345;ul. Zakopiańska 70, 30-418 Kraków;01/01/2024;8200;517 890 123;rafal.baran@example.com
+18;Monika;Malinowska;95031188900;ul. Mogilska 31/2, 31-545 Kraków;01/06/2019;6000;518 901 234;monika.malinowska@example.com
+19;Łukasz;Olszewski;83092855443;ul. Pilotów 21, 31-462 Kraków;01/05/2022;7400;519 012 345;lukasz.olszewski@example.com
+20;Beata;Sawicka;90061866778;ul. Wielicka 50/3, 30-552 Kraków;06/04/2023;6600;530 123 456;beata.sawicka@example.com
+21;Jan;Krawczyk;95033342422;al. Kijowska 14, 30-079 Kraków;2025-07-22;6000.0;555202392;jan.krawczyk@test.pl

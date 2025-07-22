@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+<table class="table table-zebra w-full shadow-md rounded-lg overflow-hidden">
+  <thead class="bg-gray-100 text-gray-700 text-sm uppercase">
+    <tr>
+      <th class="px-4 py-3 text-left">Name</th>
+      <th class="px-4 py-3 text-left">Surname</th>
+      <th class="px-4 py-3 text-left">PESEL</th>
+      <th class="px-4 py-3 text-left">Residential address</th>
+      <th class="px-4 py-3 text-left">Actions</th>  
+    </tr>
+  </thead>
+  <tbody class="text-gray-800">
+    {% for employee in employees %}
+      <tr class="hover:bg-gray-50">
+        <td class="px-4 py-2">{{ employee.name }}</td>
+        <td class="px-4 py-2">{{ employee.surname }}</td>
+        <td class="px-4 py-2">{{ employee.pesel }}</td>
+        <td class="px-4 py-2">{{ employee.residential_address }}</td>
+        <td class="px-4 py-2 flex gap-2">
+          {% if employee.pesel %}
+            <a href="{% url 'employee_detail_url' pesel=employee.pesel %}"
+               class="btn btn-sm bg-gray-300 hover:bg-gray-400 text-gray-800 border-none">
+              Details
+            </a>
+            <a href="{% url 'employee_edit_url' pesel=employee.pesel %}"
+               class="btn btn-sm bg-blue-800 hover:bg-blue-900 text-white border-none">
+              Edit
+            </a>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    
+<div class="flex justify-center mt-6">
+  <a href="{% url 'add_employee_url' %}"
+     class="btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded shadow-lg">
+    Add Employee
+  </a>
+</div>
+
+
+{% endblock %}
+
+
+
