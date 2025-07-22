@@ -69,7 +69,7 @@ python manage.py runserver
 
 http://localhost:8000/
 
-🚨 Important Notes
+### 🚨 Important Notes
 
 The PESEL number is used as a unique identifier and username in the system.
 Date fields (like date of employment) must be in YYYY-MM-DD format.
@@ -78,14 +78,14 @@ Each employee is allowed up to 26 holiday days per calendar year.
 When employees are added or removed, both the Django model and the CSV file (if used) must be kept synchronized manually or via custom scripts.
 Default passwords for new users are set to 'defaultpassword' — be sure to change this for production.
 
-📂 Project Structure
+### 📂 Project Structure
 
 employee_management_system/ — main Django app with models, views, and templates
 management/commands/import_employees.py — custom command to import employees from CSV
 templates/employee_management_system/ — HTML templates for UI
 static/ — static assets (CSS, JS)
 
-🛠️ Technologies
+### 🛠️ Technologies
 
 Python 3.12+
 Django 4.x
