@@ -1,4 +1,4 @@
-1. 🧑‍💼 Employee and Holiday Management System
+🧑‍💼 Employee and Holiday Management System
 
 ## 📋 Project Description
 
@@ -39,7 +39,7 @@ This project is ideal for small to medium-sized companies looking to streamline 
 
 ## ⚙️ How to Run
 
-### 1. Clone the repository
+1. Clone the repository
 ```bash
 git clone <your-repo-url>
 cd <your-project-folder>
