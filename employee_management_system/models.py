@@ -1,8 +1,7 @@
 import csv
 import datetime
-from django.db import models
 from django.contrib.auth.models import User
-
+from django.db import models
 
 def parse_date(date_str):
     for fmt in ('%d/%m/%Y', '%Y-%m-%d'):
@@ -10,7 +9,7 @@ def parse_date(date_str):
             return datetime.datetime.strptime(date_str, fmt).date()
         except ValueError:
             continue
-    raise ValueError(f"Niepoprawny format daty: {date_str}")
+    raise ValueError(f"Incorrect date format: {date_str}")
 
 class Employees:
     def __init__(self, name, surname, pesel, residential_address, date_of_employment, salary, phone_number, email):
@@ -58,9 +57,6 @@ class Employees:
                         row['email'],
                     )
 
-
-from django.db import models
-from django.contrib.auth.models import User
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)

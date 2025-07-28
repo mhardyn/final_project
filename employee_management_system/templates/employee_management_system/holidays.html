@@ -36,7 +36,7 @@
         </table>
     </div>
 </div>
-    
+
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(r => r.json())
             .then(resp => {
-                showMsg(resp.message || 'Dodano urlop', resp.success);
+                showMsg(resp.message || 'Vacation added', resp.success);
                 if (resp.success) {
                     calendar.refetchEvents();
                     loadRemaining();
@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         eventClick(info) {
             const pesel = document.getElementById('employee-select').value;
-            if (!pesel) return showMsg('Wybierz pracownika', false);
-            if (!confirm(`Czy chcesz usunąć urlop na dzień ${info.event.startStr}?`)) return;
+            if (!pesel) return showMsg('Select an employee', false);
+            if (!confirm(`Do you want to remove the leave for the day? ${info.event.startStr}?`)) return;
 
             fetch('{% url "delete_holiday_url" %}', {
                 method: 'POST',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(r => r.json())
             .then(resp => {
-                showMsg(resp.message || 'Usunięto urlop', resp.success);
+                showMsg(resp.message || 'Vacation deleted', resp.success);
                 if (resp.success) {
                     calendar.refetchEvents();
                     loadRemaining();
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadRemaining();
 });
 </script>
-    
+
 <style>
     .message {
         margin: 15px auto;

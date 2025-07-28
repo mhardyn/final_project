@@ -13,17 +13,17 @@ def parse_date(date_str):
             return datetime.strptime(date_str, fmt).date()
         except ValueError:
             continue
-    raise ValueError(f"Niepoprawny format daty: {date_str}")
+    raise ValueError(f"Incorrect date format: {date_str}")
 
 
 class Command(BaseCommand):
-    help = 'Importuje pracowników z pliku CSV i tworzy konta użytkowników'
+    help = 'Imports employees from a CSV file and creates user accounts'
 
     def handle(self, *args, **kwargs):
         filepath = os.path.join(settings.BASE_DIR, 'employee_management_system/migrations/employees.csv')
 
         if not os.path.exists(filepath):
-            self.stderr.write(self.style.ERROR(f"Plik {filepath} nie istnieje"))
+            self.stderr.write(self.style.ERROR(f"File {filepath} does not exist"))
             return
 
         with open(filepath, 'r', encoding='utf-8-sig') as f:
@@ -62,5 +62,5 @@ class Command(BaseCommand):
 
                 count += 1
 
-        self.stdout.write(self.style.SUCCESS(f"✅ Zaimportowano {count} pracowników."))
+        self.stdout.write(self.style.SUCCESS(f"✅ {count} employees imported."))
 

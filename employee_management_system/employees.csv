@@ -1,5 +1,5 @@
 name,surname,pesel,residential_address,date_of_employment,salary,phone_number,email
-Anna,Kowalska,90010112345,"ul. Grodzka 12, 31-044 Kraków",2025-07-15,6100.00,601 234 567,anna.kowalska@example.com
+Anna,Kowalska,90010112345,"ul. Grodzka 12, 31-044 Kraków",2025-07-15,5400.00,601 234 567,anna.kowalska@example.com
 Jan,Nowak,85032254321,"ul. Długa 7/3, 31-147 Kraków",2023-01-01,7200.00,602 345 678,jan.nowak@example.com
 Karolina,Wiśniewska,92061498765,"ul. Karmelicka 25, 31-131 Kraków",2022-03-24,5800.00,603 456 789,karolina.wisniewska@example.com
 Tomasz,Zieliński,78123033456,"ul. Starowiślna 44/6, 31-038 Kraków",2024-04-01,8300.00,604 567 890,tomasz.zielinski@example.com
@@ -20,4 +20,3 @@ Monika,Malinowska,95031188900,"ul. Mogilska 31/2, 31-545 Kraków",2019-06-01,600
 Łukasz,Olszewski,83092855443,"ul. Pilotów 21, 31-462 Kraków",2022-05-01,7400.00,519 012 345,lukasz.olszewski@example.com
 Beata,Sawicka,90061866778,"ul. Wielicka 50/3, 30-552 Kraków",2023-04-06,6600.00,530 123 456,beata.sawicka@example.com
 Jan,Krawczyk,95033342422,"al. Kijowska 14, 30-079 Kraków",2025-07-22,6000.00,555202392,jan.krawczyk@test.pl
-Anna,Kocmyrzowska,87293939343,"al. Kijowska 15, 30-079 Kraków",2025-07-08,5500.00,887223766,anna.kocmyrzowska@test.pl

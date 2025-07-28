@@ -28,7 +28,7 @@ def employee_search(request):
         try:
             employee = Employee.objects.get(pesel=pesel)
         except Employee.DoesNotExist:
-            error = "Nie znaleziono pracownika o podanym PESEL."
+            error = "No employee with the given PESEL number was found."
     return render(request, 'employee_management_system/employee_search.html', {'employee': employee, 'error': error})
 
 
@@ -43,14 +43,13 @@ def holidays_view(request):
             taken = Holiday.objects.filter(employee=user, date__year=current_year).count()
             remaining[emp.pesel] = 26 - taken
         except User.DoesNotExist:
-            remaining[emp.pesel] = 'Brak konta'
+            remaining[emp.pesel] = 'No account'
 
     return render(request, 'employee_management_system/holidays.html', {
         'employees': employees,
         'remaining': remaining,
         'current_year': current_year
     })
-
 
 def holidays_events_json(request):
     current_year = date.today().year
@@ -70,20 +69,20 @@ def add_holiday(request):
     date_str = data.get('date')
     pesel = data.get('employee_info')
     if not date_str or not pesel:
-        return JsonResponse({'success': False, 'message': 'Brak danych'})
+        return JsonResponse({'success': False, 'message': 'No data'})
     try:
         date_obj = dt.strptime(date_str, "%Y-%m-%d").date()
         user = User.objects.get(username=pesel)
     except (ValueError, User.DoesNotExist):
-        return JsonResponse({'success': False, 'message': 'Nie znaleziono użytkownika lub błędna data'})
+        return JsonResponse({'success': False, 'message': 'User not found or invalid date'})
 
     year = date_obj.year
     if Holiday.objects.filter(employee=user, date=date_obj).exists():
-        return JsonResponse({'success': False, 'message': 'Urlop już istnieje'})
+        return JsonResponse({'success': False, 'message': 'Vacation already exists'})
     if Holiday.objects.filter(date=date_obj).count() >= 5:
-        return JsonResponse({'success': False, 'message': 'Na ten dzień jest już 5 osób na urlopie'})
+        return JsonResponse({'success': False, 'message': 'As of today, there are already 5 people on leave'})
     if Holiday.objects.filter(employee=user, date__year=year).count() >= 26:
-        return JsonResponse({'success': False, 'message': 'Pracownik wykorzystał 26 dni urlopu w tym roku'})
+        return JsonResponse({'success': False, 'message': 'The employee used 26 days of leave this year'})
 
     Holiday.objects.create(employee=user, date=date_obj)
     return JsonResponse({'success': True})
@@ -97,18 +96,18 @@ def delete_holiday(request):
     pesel = data.get('employee_info')
 
     if not date_str or not pesel:
-        return JsonResponse({'success': False, 'message': 'Brak danych'})
+        return JsonResponse({'success': False, 'message': 'Data error'})
 
     try:
         date_obj = dt.strptime(date_str, "%Y-%m-%d").date()
         user = User.objects.get(username=pesel)
     except (ValueError, User.DoesNotExist):
-        return JsonResponse({'success': False, 'message': 'Błąd danych'})
+        return JsonResponse({'success': False, 'message': 'Data error'})
 
     deleted, _ = Holiday.objects.filter(employee=user, date=date_obj).delete()
     if deleted:
         return JsonResponse({'success': True})
-    return JsonResponse({'success': False, 'message': 'Urlop nie został znaleziony'})
+    return JsonResponse({'success': False, 'message': 'Vacation not found'})
 
 
 def get_remaining_days(request):
@@ -144,7 +143,7 @@ def get_birth_date_from_pesel(pesel):
         century = 1800
         month -= 80
     else:
-        raise ValueError("Nieprawidłowy miesiąc w PESEL")
+        raise ValueError("Incorrect month in PESEL")
 
     full_year = century + year
     return date(full_year, month, day)
@@ -194,7 +193,6 @@ def statistics(request):
         'average_age': average_age,
     })
 
-
 def employee_edit(request, pesel):
     employee = get_object_or_404(Employee, pesel=pesel)
 
@@ -235,12 +233,10 @@ def employee_edit(request, pesel):
                 email=email
             )
 
-        write_employees_to_csv()  # 🔁 Zapis do CSV
+        write_employees_to_csv()
         return redirect('employee_detail_url', pesel=pesel_new)
 
     return render(request, 'employee_management_system/employee_edit.html', {'employee': employee})
-
-
 
 @require_POST
 def delete_employee(request, pesel):
@@ -253,7 +249,7 @@ def delete_employee(request, pesel):
     except User.DoesNotExist:
         pass
 
-    write_employees_to_csv()  # 🔁 Zapis do CSV
+    write_employees_to_csv()
     return redirect('all_employees_url')
 
 
@@ -289,7 +285,7 @@ def add_employee(request):
                 email=email,
             )
 
-        write_employees_to_csv()  # 🔁 Zapis do CSV
+        write_employees_to_csv()
         return redirect(reverse('all_employees_url'))
 
     return render(request, 'employee_management_system/employee_add.html')

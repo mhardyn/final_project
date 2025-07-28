@@ -7,7 +7,7 @@ django.setup()
 
 from django.contrib.auth.models import User
 
-CSV_PATH = 'employee_management_system/migrations/employees.csv'  # dopasuj jeśli jest inaczej
+CSV_PATH = 'employee_management_system/migrations/employees.csv'
 
 with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=';')
@@ -18,7 +18,7 @@ with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
         last_name = row['surname'].strip()
 
         if not pesel:
-            print("⚠️ Pominięto wiersz bez PESEL:", row)
+            print("⚠️ The line without PESEL was skipped:", row)
             continue
 
         if not User.objects.filter(username=pesel).exists():
@@ -29,9 +29,9 @@ with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
                 last_name=last_name
             )
             user.save()
-            print(f"✅ Utworzono użytkownika: {pesel} - {first_name} {last_name}")
+            print(f"✅ User created: {pesel} - {first_name} {last_name}")
             created_count += 1
         else:
-            print(f"ℹ️ Użytkownik {pesel} już istnieje")
+            print(f"ℹ️ User {pesel} already exists")
 
-print(f"\n🏁 Zakończono. Utworzono {created_count} nowych użytkowników.")
+print(f"\n🏁 Completed. {created_count} new users created.")
