@@ -79,12 +79,6 @@ Each employee is allowed up to 26 holiday days per calendar year.
 When employees are added or removed, both the Django model and the CSV file (if used) must be kept synchronized manually or via custom scripts.
 Default passwords for new users are set to 'defaultpassword' — be sure to change this for production.
 
-### 📂 Project Structure
-
-employee_management_system/ — main Django app with models, views, and templates
-management/commands/import_employees.py — custom command to import employees from CSV
-templates/employee_management_system/ — HTML templates for UI
-static/ — static assets (CSS, JS)
 
 ### 🛠️ Technologies
 
