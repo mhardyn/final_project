@@ -3,23 +3,29 @@
 {% block content %}
   <div class="max-w-md mx-auto mt-10">
 
-    <form method="post" class="card bg-base-100 shadow-md p-6 space-y-4">
+    <form method="post" class="card bg-gray-200 shadow-md p-6 space-y-4">
       {% csrf_token %}
-      <label for="pesel" class="block font-medium">Enter PESEL:</label>
-      <input type="text" name="pesel" id="pesel" class="input input-bordered bg-gray-100 w-full border-gray-400" required>
+      <label for="pesel" class="block font-medium text-black">Enter PESEL:</label>
+      <input type="text"
+             name="pesel"
+             id="pesel"
+             class="input input-bordered bg-gray-100 w-full border-gray-400"
+             required
+             maxlength="11"
+             pattern="\d{11}"
+             inputmode="numeric"
+             title="PESEL must contain exactly 11 digits">
 
       <div class="flex gap-2">
-        <button type="submit" class="btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
-        Search
+        <button type="submit" class="btn bg-blue-800 hover:bg-blue-400 text-white flex-grow">
+          Search
         </button>
         <button type="button"
-          onclick="window.location.href='{% url 'employee_search_url' %}'"
-          class="btn bg-gray-300 hover:bg-gray-400 text-gray-800">
-        Clear
+                onclick="window.location.href='{% url 'employee_search_url' %}'"
+                class="btn bg-gray-300 hover:bg-gray-400 text-gray-800">
+          Clear
         </button>
-</div>
-
-
+      </div>
     </form>
 
     {% if error %}
@@ -39,7 +45,8 @@
         <p><strong>Email:</strong> {{ employee.email }}</p>
 
         {% if employee.pesel %}
-          <a href="{% url 'employee_edit_url' pesel=employee.pesel %}" class="btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
+          <a href="{% url 'employee_edit_url' pesel=employee.pesel %}"
+             class="btn bg-blue-800 hover:bg-blue-900 text-white flex-grow">
             Edit data
           </a>
         {% endif %}
@@ -48,5 +55,4 @@
 
   </div>
 {% endblock %}
-
 
