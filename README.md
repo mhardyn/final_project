@@ -40,9 +40,9 @@ This project is ideal for small to medium-sized companies looking to streamline 
 ## ⚙️ How to Run
 
 1. Clone the repository
-```bash
-git clone <your-repo-url>
+   
 cd <your-project-folder>
+git clone https://github.com/mhardyn/final_project.git
 
 2. Create and activate a virtual environment
 
@@ -51,10 +51,11 @@ source venv/bin/activate    # On Windows: venv\Scripts\activate
 
 3. Install dependencies
 
-pip install -r requirements.txt
+pip install Django
 
 4. Run database migrations
 
+python manage.py makemigrations
 python manage.py migrate
 
 5. (Optional) Import employees from CSV
