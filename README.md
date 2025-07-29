@@ -21,7 +21,7 @@ This project is ideal for small to medium-sized companies looking to streamline 
 - Automatically create and manage corresponding Django user accounts
 
 ### 🗓️ Holidays
-- Add and delete holiday entries for employees
+- Add and delete holiday entries for employees by clicking on specific days
 - Each employee can take up to **26 days of holiday per year**
 - A maximum of **5 employees can be on holiday on the same day**
 - Real-time calculation of remaining leave days per employee
